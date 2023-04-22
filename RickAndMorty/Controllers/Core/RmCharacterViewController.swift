@@ -14,6 +14,16 @@ class RmCharacterViewController: UIViewController {
 
         view.backgroundColor = .systemBackground
         title = "Characters"
+        
+        let request = RMRequest(endpoint: .character)
+        
+        print(request.url)
+        
+        RMService.shared.execute(request, expecting: RMCharacter.self) { result in
+            switch result{
+            case .success()
+            }
+        }
     }
     
 
